@@ -3,3 +3,4 @@ build/
 .build/
 .claude/
 .vscode/
+.DS_Store
