@@ -71,9 +71,13 @@ swift test
 The build produces `c2enc` and `c2dec` binaries in `.build/debug/`. They take the same `mode input output` arguments as the C reference tools:
 
 ```sh
+# play sample raw audio using sox
+play --encoding signed-integer --bits 16 --rate 8000 raw/hts1a.raw
 # encode the bundled hts1a sample at 700C, then decode it back
-.build/debug/c2enc 700C codec2/raw/hts1a.raw /tmp/hts1a_700c.bit
+.build/debug/c2enc 700C raw/hts1a.raw /tmp/hts1a_700c.bit
 .build/debug/c2dec 700C /tmp/hts1a_700c.bit /tmp/hts1a_700c_decoded.raw
+# play decoded audio
+play --encoding signed-integer --bits 16 --rate 8000 /tmp/hts1a_700c_decoded.raw
 
 # Compare against the C reference outputs
 cmp /tmp/hts1a_700c.bit Tests/Codec2Tests/Reference/hts1a_700C.bit
