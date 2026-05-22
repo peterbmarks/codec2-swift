@@ -1,6 +1,14 @@
 # codec2-swift
 
-A pure-Swift port of David Rowe's [Codec 2](http://rowetel.com/codec2.html) speech codec.
+Codec 2 is an open-source, low-bitrate speech codec developed by Australian engineer David Rowe (VK5DGR), 
+designed specifically for compressing voice at very low bit rates — far lower than mainstream codecs like MP3 or even Opus.
+
+*Core purpose*
+It was created to enable intelligible voice communication over very narrow bandwidth channels, particularly HF (shortwave) radio links used in amateur radio and emergency communications. At the bit rates Codec 2 targets, most commercial codecs either don't work or produce unusable audio.
+
+Codec2 can also be used to compress speach to a very small data file.
+
+This project is a pure-Swift port of David Rowe's [Codec 2](http://rowetel.com/codec2.html) speech codec.
 
 The library is implemented entirely in Swift with no dependency on the C codec2 sources at runtime. The original C reference is used only as the source of truth for parity testing and codebook tables. The port is built and tested against the C reference outputs captured under [Tests/Codec2Tests/Reference/](Tests/Codec2Tests/Reference/).
 
