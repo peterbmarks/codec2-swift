@@ -104,6 +104,15 @@ To filter to one suite:
 swift test --filter Mode700CParityTests
 ```
 
+### XCTest not found?
+
+XCTest isn't in the command line tools, it comes bundled in XCode. You may
+need to switch as follows:
+
+```
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+```
+
 ### Mode 700C parity result
 
 The 700C encoder produces a bitstream that is **byte-for-byte identical** to the C reference. The decoder, fed the same C-generated bits, produces audio that is **≤ 1 LSB away from the C output on every sample**:
