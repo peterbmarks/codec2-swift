@@ -109,7 +109,7 @@ swift test --filter Mode700CParityTests
 XCTest isn't in the command line tools, it comes bundled in XCode. You may
 need to switch as follows:
 
-```
+```sh
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
 
